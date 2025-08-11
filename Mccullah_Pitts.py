@@ -64,28 +64,4 @@ def plot_gate(gate_name, outputs, theta):
     plt.show()
 
 
-import matplotlib.pyplot as plt
-import numpy as np
-
-def plot_gate(gate_name, outputs, theta):
-    plt.figure()
-    for i in range(4):
-        color = 'red' if outputs[i] == 1 else 'blue'
-        plt.scatter(x1[i], x2[i], c=color, s=100)
-    plt.xlabel("x1")
-    plt.ylabel("x2")
-    plt.title(f"{gate_name} Gate (theta={theta})")
-    
-    # Plot separating line: x1 + x2 = theta
-    x_vals = np.linspace(-0.5, 1.5, 100)
-    y_vals = theta - x_vals
-    plt.plot(x_vals, y_vals, 'k--')
-    plt.grid(True)
-    plt.show()
-
-for gate, target_outputs in gates.items():
-    for theta in [t * 0.5 for t in range(-6, 7)]:
-        if mccullah(x1, x2, w1, w2, theta, target_outputs):
-            
-            break
 
